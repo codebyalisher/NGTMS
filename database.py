@@ -16,9 +16,6 @@ if MYSQL_PASSWORD:
 else:
     DATABASE_URL = f"mysql+pymysql://{MYSQL_USER}@{MYSQL_HOST}/{MYSQL_DB}"
 
-# DEBUG: print the final URL
-print("DATABASE_URL:", DATABASE_URL)
-
 # Set up SQLAlchemy
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
